@@ -56,7 +56,7 @@ export const Contact = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="p-8 md:p-12 bg-slate-50 dark:bg-slate-900 rounded-[3rem] border border-slate-100 dark:border-slate-800 shadow-2xl shadow-purple-500/5"
+            className="p-8 md:p-12 bg-slate-50 dark:bg-slate-900 rounded-[2rem] border border-slate-150 dark:border-slate-800 shadow-2xl shadow-purple-500/5"
           >
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -64,7 +64,7 @@ export const Contact = () => {
                   <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Name</label>
                   <input
                     {...register('name', { required: true })}
-                    className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all placeholder:text-slate-300 dark:placeholder:text-slate-600"
+                    className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-150 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all placeholder:text-slate-300 dark:placeholder:text-slate-600"
                     placeholder="Jane Doe"
                   />
                 </div>
@@ -72,7 +72,7 @@ export const Contact = () => {
                   <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Email</label>
                   <input
                     {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
-                    className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all placeholder:text-slate-300 dark:placeholder:text-slate-600"
+                    className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-150 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all placeholder:text-slate-300 dark:placeholder:text-slate-600"
                     placeholder="jane@example.com"
                   />
                 </div>
@@ -82,7 +82,7 @@ export const Contact = () => {
                 <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Subject</label>
                 <input
                   {...register('subject', { required: true })}
-                  className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all placeholder:text-slate-300 dark:placeholder:text-slate-600"
+                  className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-150 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all placeholder:text-slate-300 dark:placeholder:text-slate-600"
                   placeholder="Project Inquiry"
                 />
               </div>
@@ -92,7 +92,7 @@ export const Contact = () => {
                 <textarea
                   {...register('message', { required: true })}
                   rows={4}
-                  className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all resize-none placeholder:text-slate-300 dark:placeholder:text-slate-600"
+                  className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-150 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all resize-none placeholder:text-slate-300 dark:placeholder:text-slate-600"
                   placeholder="Tell me about your vision..."
                 />
               </div>
@@ -118,13 +118,13 @@ export const Footer = () => {
     <footer className="py-12 px-6 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-[#0a0a1f]">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-purple-600 flex items-center justify-center text-white font-black text-xl italic shadow-lg shadow-purple-500/20">A</div>
-          <span className="font-black text-slate-900 dark:text-white tracking-widest text-lg">ARIVERA.DESIGN</span>
+          <div className="w-10 h-10 rounded-md bg-purple-600 flex items-center justify-center text-white font-black text-xl italic shadow-lg shadow-purple-500/20">P</div>
+          <span className="font-black text-slate-900 dark:text-white tracking-widest text-lg">Parindya</span>
         </div>
         
         <div className="flex flex-col items-center md:items-start gap-1">
           <p className="text-slate-500 text-xs font-bold uppercase tracking-widest">
-            © {new Date().getFullYear()} Alex Rivera. All rights reserved.
+            © {new Date().getFullYear()} Isuru Parindya. All rights reserved.
           </p>
           <p className="text-slate-300 dark:text-slate-700 text-[10px] font-black uppercase tracking-[0.3em]">
             Precision Engineering • Purposeful Design
