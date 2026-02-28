@@ -108,7 +108,7 @@ export const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
-              className="group flex flex-col h-full bg-slate-50 dark:bg-slate-900 rounded-[2.5rem] overflow-hidden border border-slate-100 dark:border-slate-800 transition-all hover:shadow-2xl hover:shadow-purple-500/10"
+              className="group flex flex-col h-full bg-slate-50 dark:bg-slate-900 rounded-[1.5rem] overflow-hidden border border-slate-300 dark:border-slate-800 transition-all hover:shadow-2xl hover:shadow-purple-500/10 hover:border-purple-400 dark:hover:border-purple-600"
             >
               {/* Image */}
               <div className="relative aspect-[16/10] overflow-hidden">
@@ -159,7 +159,7 @@ export const Projects = () => {
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="text-[10px] uppercase tracking-wider font-bold text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/30 px-2 py-1 rounded"
+                      className="text-[11px] uppercase tracking-wider font-semibold text-slate-700 dark:text-slate-300 bg-transparent border border-slate-400 dark:border-slate-600 px-3 py-1 rounded-full hover:border-purple-500 hover:text-purple-600 dark:hover:border-purple-400 dark:hover:text-purple-400 transition-colors cursor-default"
                     >
                       {tech}
                     </span>

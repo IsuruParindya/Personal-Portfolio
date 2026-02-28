@@ -100,7 +100,7 @@ export const Contact = () => {
               <button
                 disabled={isSubmitting}
                 type="submit"
-                className="w-full py-5 bg-slate-900 dark:bg-purple-600 hover:bg-purple-600 dark:hover:bg-purple-700 text-white rounded-2xl font-black uppercase tracking-widest text-sm flex items-center justify-center gap-3 transition-all disabled:opacity-50 shadow-xl shadow-purple-500/10"
+                className="w-full py-5 bg-purple-600 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-500 text-white rounded-2xl font-black uppercase tracking-widest text-sm flex items-center justify-center gap-3 transition-all disabled:opacity-50 shadow-xl shadow-purple-500/20"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
                 <Send className="w-5 h-5" />

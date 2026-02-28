@@ -1,17 +1,17 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { Palette, Code, Briefcase, GraduationCap, ChevronRight } from 'lucide-react';
+import { Palette, Code, Briefcase, GraduationCap } from 'lucide-react';
 
 export const About = () => {
   const skills = [
-    'User Research', 'Information Architecture', 'Visual Design', 
-    'Interaction Design', 'Prototyping', 'Usability Testing', 
+    'User Research', 'Information Architecture', 'Visual Design',
+    'Interaction Design', 'Prototyping', 'Usability Testing',
     'Accessibility (A11y)', 'Design Systems'
   ];
 
   const tools = [
-    'Figma', 'Adobe Creative Suite', 'React', 'TypeScript', 
+    'Figma', 'Adobe Creative Suite', 'React', 'TypeScript',
     'Tailwind CSS', 'Framer Motion', 'Webflow', 'Storybook'
   ];
 
@@ -54,13 +54,13 @@ export const About = () => {
               </p>
             </div>
 
-            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl mb-12 group">
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl mb-12 group bg-[#0a0a0a]">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1623853434105-8e7a72898180?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMFVJJTIwVVglMjBkZXNpZ25lciUyMG1pbmltYWxpc3R8ZW58MXx8fHwxNzcwODIxMzAyfDA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Alex Rivera"
+                src="/Isuru.png"
+                alt="Isuru Parindya"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent mix-blend-multiply opacity-40" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1d1d1d] via-[#111111]/50 to-transparent" />
             </div>
 
             <div className="space-y-12">
@@ -107,12 +107,14 @@ export const About = () => {
                 <Palette className="text-purple-600" />
                 Expertise & Skills
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="flex flex-wrap gap-3">
                 {skills.map((skill, idx) => (
-                  <div key={idx} className="flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm hover:border-purple-400 transition-colors group">
-                    <ChevronRight className="w-4 h-4 text-purple-600 group-hover:translate-x-1 transition-transform" />
-                    <span className="text-slate-700 dark:text-slate-300 font-medium">{skill}</span>
-                  </div>
+                  <span
+                    key={idx}
+                    className="px-4 py-2 rounded-2xl bg-transparent text-slate-700 dark:text-slate-300 font-medium text-sm border border-slate-400 dark:border-slate-600 hover:border-purple-500 hover:text-purple-600 dark:hover:border-purple-400 dark:hover:text-purple-400 cursor-default transition-transform hover:-translate-y-1"
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
@@ -124,9 +126,9 @@ export const About = () => {
               </h3>
               <div className="flex flex-wrap gap-3">
                 {tools.map((tool, idx) => (
-                  <span 
+                  <span
                     key={idx}
-                    className="px-5 py-2.5 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-bold tracking-wide transition-transform hover:-translate-y-1"
+                    className="px-4 py-2 rounded-2xl bg-transparent text-slate-700 dark:text-slate-300 font-medium text-sm border border-slate-400 dark:border-slate-600 hover:border-purple-500 hover:text-purple-600 dark:hover:border-purple-400 dark:hover:text-purple-400 cursor-default transition-transform hover:-translate-y-1"
                   >
                     {tool}
                   </span>
@@ -135,18 +137,17 @@ export const About = () => {
             </div>
 
             {/* Theme-aware Quote Card */}
-            <div className="p-8 rounded-[2.5rem] bg-black dark:bg-purple-200 text-white dark:text-purple-900 shadow-2xl relative overflow-hidden">
+            <div className="p-8 rounded-[2.5rem] bg-transparent border border-slate-400 dark:border-slate-600 text-slate-700 dark:text-slate-300 shadow-2xl relative overflow-hidden">
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold mb-4 italic">
-                  "Design is not just what it looks like. Design is how it works."
+                "Design is not just what it looks like. Design is how it works."
                 </h3>
-                <p className="font-light leading-relaxed">
-                  I believe in purposeful aesthetics. Every element I place has a reason to exist, ensuring that form always follows function while still evoking delight.
-                </p>
-              </div>
-              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
+              <p className="font-light leading-relaxed">
+              I believe in purposeful aesthetics. Every element I place has a reason to exist, ensuring that form always follows function while still evoking delight.
+              </p>
             </div>
-
+          <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl" />
+        </div>
           </motion.div>
 
         </div>
