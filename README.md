@@ -11,6 +11,8 @@
 ## Getting Started
 
 1. Install dependencies:
+2. Clone
 
 ```bash
 npm install
+https://github.com/IsuruParindya/Personal-Portfolio.git
