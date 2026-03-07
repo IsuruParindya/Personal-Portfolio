@@ -11,7 +11,7 @@
 ## Getting Started
 
 1. Install dependencies:
-2. Clone
+2. Rep Clone
 
 ```bash
 npm install
