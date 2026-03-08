@@ -1,119 +1,86 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
-import {
-  Palette,
-  Code,
-  Briefcase,
-  GraduationCap,
-  Award,
-  User,
-} from "lucide-react";
+import React from 'react';
+import { motion } from 'motion/react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Palette, Code, Briefcase, GraduationCap, MapPin, Calendar, Award } from 'lucide-react';
 
 export const About = () => {
   const skills = [
-    "User Research",
-    "Information Architecture",
-    "Visual Design",
-    "Interaction Design",
-    "Prototyping",
-    "Usability Testing",
-    "Accessibility (A11y)",
-    "Design Systems",
+    'User Research', 'Information Architecture', 'Visual Design',
+    'Interaction Design', 'Prototyping', 'Usability Testing',
+    'Accessibility (A11y)', 'Design Systems'
   ];
 
   const tools = [
-    "Figma",
-    "Adobe Creative Suite",
-    "React",
-    "TypeScript",
-    "Tailwind CSS",
-    "Framer Motion",
-    "Webflow",
-    "Storybook",
+    'Figma', 'Adobe Creative Suite', 'React', 'TypeScript',
+    'Tailwind CSS', 'Framer Motion', 'Webflow', 'Storybook'
   ];
 
   const experiences = [
     {
-      role: "UI/UX Engineer Intern",
-      company: "ICIEOS (Pvt) Ltd",
-      period: "Mar 2025 - Sep 2025",
-      description:
-        "Worked on improving user interface workflows and contributed to building modern UI components while aligning design systems with real product implementation.",
+      role: 'Lead UI/UX Engineer',
+      company: 'Prism Designs',
+      period: '2022 - Present',
+      description: 'Spearheading the evolution of our enterprise design system and bridge the gap between Figma and production code.',
+      tag: 'Current'
     },
-  ];
-
-  const education = [
     {
-      degree: "BSc. Information Technology",
-      institution: "BCI Campus",
-      period: "2023 - Present",
-      description:
-        "Currently pursuing a degree in Information Technology with focus on software development, artificial intelligence, and user interface engineering.",
-    },
+      role: 'Senior Product Designer',
+      company: 'Vortex Apps',
+      period: '2020 - 2022',
+      description: 'Transformed complex data workflows into intuitive dashboard interfaces for fintech clients.',
+      tag: null
+    }
   ];
 
   const certifications = [
     {
-      org: "University of Moratuwa",
-      items: [
-        "Web Design for Beginners (2025)",
-        "Front-End Web Development (2025)",
-        "Python for Beginners E-Certificate (2024)",
-      ],
+      institution: 'University of Moratuwa',
+      certs: [
+        { name: 'Web Design for Beginners', year: '2025', note: null },
+        { name: 'Front-End Web Development', year: '2025', note: null },
+        { name: 'Python for Beginners E-Certificate', year: '2024', note: null },
+      ]
     },
     {
-      org: "Udemy",
-      items: [
-        "UI/UX Design Course (Completed during UI/UX Engineer Internship, 2025)",
-      ],
+      institution: 'Udemy',
+      certs: [
+        { name: 'UI/UX Design Course', year: '2025', note: 'Completed during UI/UX Engineer Internship' },
+      ]
     },
     {
-      org: "BCI Campus",
-      items: ["Certificate in Java Programming (2023)"],
-    },
+      institution: 'BCI Campus',
+      certs: [
+        { name: 'Certificate in Java Programming', year: '2023', note: null },
+      ]
+    }
   ];
-
-  const aboutMe =
-    "I’m a UI/UX focused developer who enjoys turning complex ideas into clean, usable interfaces. I combine design thinking with front-end engineering to build consistent, modern experiences always aiming for clarity, accessibility, and smooth interactions.";
-
-  const cardBase =
-    "p-6 rounded-2xl border border-slate-400 dark:border-slate-800 bg-white/60 dark:bg-slate-900/40 backdrop-blur-xl " +
-    "hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group";
-
-  const pillClass =
-    'px-4 py-2 rounded-2xl bg-transparent text-slate-700 dark:text-slate-300 font-medium text-sm ' +
-    'border border-slate-400 dark:border-slate-600 hover:border-purple-500 hover:text-purple-600 ' +
-    'dark:hover:border-purple-400 dark:hover:text-purple-400 cursor-default transition-transform hover:-translate-y-1';
 
   return (
     <section id="about" className="py-24 px-6 bg-slate-50 dark:bg-slate-900/50">
       <div className="max-w-6xl mx-auto">
-        {/* TOP GRID: Name/Image (Left) + About/Skills/Tools (Right) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* LEFT TOP */}
+
+        {/* Row 1: Name + hero photo | Skills + Tools + Quote */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
+
+          {/* LEFT: Name + Photo */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            {/* NAME */}
             <div className="relative mb-12">
               <h2 className="text-7xl md:text-9xl font-black text-slate-900/10 dark:text-white/5 absolute -top-16 -left-8 pointer-events-none select-none">
                 ISURU PARINDYA
               </h2>
-
               <h2 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white relative z-10 mb-4">
                 ISURU PARINDYA
               </h2>
-
               <p className="text-purple-600 dark:text-purple-400 font-bold uppercase tracking-widest">
                 Creative Problem Solver & Visual Architect
               </p>
             </div>
 
-            {/* IMAGE */}
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl group bg-[#0a0a0a]">
               <ImageWithFallback
                 src="/Isuru.png"
@@ -124,197 +91,197 @@ export const About = () => {
             </div>
           </motion.div>
 
-          {/* RIGHT TOP */}
+          {/* RIGHT: Skills + Tools + Quote */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-16 lg:pt-24"
+            className="lg:pt-24 space-y-16"
           >
-            {/* ABOUT ME */}
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.55 }}
-            >
-              <h3 className="flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white mb-6">
-                <User className="text-purple-600" />
-                About Me
-              </h3>
-
-              <div className={cardBase}>
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                  {aboutMe}
-                </p>
-                <div className="mt-4 h-[2px] w-0 group-hover:w-full bg-purple-500 transition-all duration-500" />
-              </div>
-            </motion.div>
-
-            {/* SKILLS (animation restored + pill hover restored) */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.55 }}
-            >
+            <div>
               <h3 className="flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white mb-8">
                 <Palette className="text-purple-600" />
                 Expertise & Skills
               </h3>
-
               <div className="flex flex-wrap gap-3">
                 {skills.map((skill, idx) => (
-                  <span key={idx} className={pillClass}>
+                  <span
+                    key={idx}
+                    className="px-4 py-2 rounded-2xl bg-transparent text-slate-700 dark:text-slate-300 font-medium text-sm border border-slate-400 dark:border-slate-600 hover:border-purple-500 hover:text-purple-600 dark:hover:border-purple-400 dark:hover:text-purple-400 cursor-default transition-transform hover:-translate-y-1"
+                  >
                     {skill}
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
-            {/* TOOLS (animation restored + pill hover restored) */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.55, delay: 0.05 }}
-            >
+            <div>
               <h3 className="flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white mb-8">
                 <Code className="text-purple-600" />
                 Technologies & Tools
               </h3>
-
               <div className="flex flex-wrap gap-3">
                 {tools.map((tool, idx) => (
-                  <span key={idx} className={pillClass}>
+                  <span
+                    key={idx}
+                    className="px-4 py-2 rounded-2xl bg-transparent text-slate-700 dark:text-slate-300 font-medium text-sm border border-slate-400 dark:border-slate-600 hover:border-purple-500 hover:text-purple-600 dark:hover:border-purple-400 dark:hover:text-purple-400 cursor-default transition-transform hover:-translate-y-1"
+                  >
                     {tool}
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </div>
+
+            <div className="p-8 rounded-[2.5rem] bg-transparent border border-slate-400 dark:border-slate-600 text-slate-700 dark:text-slate-300 shadow-2xl relative overflow-hidden">
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold mb-4 italic">
+                  &ldquo;Design is not just what it looks like. Design is how it works.&rdquo;
+                </h3>
+                <p className="font-light leading-relaxed">
+                  I believe in purposeful aesthetics. Every element I place has a reason to exist, ensuring that form always follows function while still evoking delight.
+                </p>
+              </div>
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl" />
+            </div>
           </motion.div>
         </div>
 
-        {/* SECOND GRID: Experience/Education (Left) + Certifications (Right) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mt-16">
-          {/* LEFT: EXPERIENCE + EDUCATION */}
-          <div className="space-y-12">
-            {/* EXPERIENCE */}
+        {/* Row 2: Experience + Education | Certifications — perfectly side by side */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+          {/* LEFT: Experience + Education */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-12"
+          >
             <div>
-              <h3 className="flex items-center gap-3 text-xl font-bold text-slate-900 dark:text-white mb-8">
+              <h3 className="flex items-center gap-3 text-xl font-bold text-slate-900 dark:text-white mb-6">
                 <Briefcase className="text-purple-600" />
                 Experience
               </h3>
-
-              <div className="grid gap-6">
+              <div className="space-y-4">
                 {experiences.map((exp, idx) => (
                   <motion.div
                     key={idx}
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className={cardBase}
+                    transition={{ duration: 0.5, delay: idx * 0.15 }}
+                    className="group relative rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-5 hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300"
                   >
-                    <div className="flex justify-between mb-3">
-                      <h4 className="font-bold text-lg text-slate-900 dark:text-white">
-                        {exp.role}
-                      </h4>
-
-                      <span className="text-xs px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300">
+                    {exp.tag && (
+                      <span className="absolute top-4 right-4 text-xs font-semibold px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400">
+                        {exp.tag}
+                      </span>
+                    )}
+                    <span className="text-4xl font-black text-slate-100 dark:text-slate-700/60 absolute bottom-3 right-5 select-none pointer-events-none leading-none group-hover:text-purple-100 dark:group-hover:text-purple-900/30 transition-colors duration-300">
+                      0{idx + 1}
+                    </span>
+                    <h4 className="font-bold text-slate-900 dark:text-white text-base mb-1">{exp.role}</h4>
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-sm font-medium text-purple-600 dark:text-purple-400">{exp.company}</span>
+                      <span className="text-slate-300 dark:text-slate-600">•</span>
+                      <span className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
+                        <Calendar size={11} />
                         {exp.period}
                       </span>
                     </div>
-
-                    <p className="text-sm font-semibold text-purple-600 dark:text-purple-400 mb-3">
-                      {exp.company}
-                    </p>
-
-                    <p className="text-slate-600 dark:text-slate-400 text-sm">
-                      {exp.description}
-                    </p>
-
-                    <div className="mt-4 h-[2px] w-0 group-hover:w-full bg-purple-500 transition-all duration-500" />
+                    <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed pr-8">{exp.description}</p>
                   </motion.div>
                 ))}
               </div>
             </div>
 
-            {/* EDUCATION */}
             <div>
-              <h3 className="flex items-center gap-3 text-xl font-bold text-slate-900 dark:text-white mb-8">
+              <h3 className="flex items-center gap-3 text-xl font-bold text-slate-900 dark:text-white mb-6">
                 <GraduationCap className="text-purple-600" />
                 Education
               </h3>
-
-              <div className="grid gap-6">
-                {education.map((edu, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className={cardBase}
-                  >
-                    <div className="flex justify-between mb-3">
-                      <h4 className="font-bold text-lg text-slate-900 dark:text-white">
-                        {edu.degree}
-                      </h4>
-
-                      <span className="text-xs px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300">
-                        {edu.period}
-                      </span>
-                    </div>
-
-                    <p className="text-sm font-semibold text-purple-600 dark:text-purple-400 mb-3">
-                      {edu.institution}
-                    </p>
-
-                    <p className="text-slate-600 dark:text-slate-400 text-sm">
-                      {edu.description}
-                    </p>
-
-                    <div className="mt-4 h-[2px] w-0 group-hover:w-full bg-purple-500 transition-all duration-500" />
-                  </motion.div>
-                ))}
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="group relative rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-5 hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 overflow-hidden"
+              >
+                <GraduationCap
+                  size={80}
+                  className="absolute -bottom-4 -right-4 text-slate-100 dark:text-slate-700/40 group-hover:text-purple-100 dark:group-hover:text-purple-900/30 transition-colors duration-300"
+                />
+                <div className="relative z-10">
+                  <div className="flex items-start justify-between mb-1">
+                    <h4 className="font-bold text-slate-900 dark:text-white">BFA in Interaction Design</h4>
+                    <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 ml-2 whitespace-nowrap">
+                      Class of 2018
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1 text-sm text-purple-600 dark:text-purple-400 mt-1">
+                    <MapPin size={12} />
+                    <span>Global Institute of Art & Tech</span>
+                  </div>
+                </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* RIGHT: CERTIFICATIONS */}
-          <div>
-            <h3 className="flex items-center gap-3 text-xl font-bold text-slate-900 dark:text-white mb-8">
+          {/* RIGHT: Certifications — starts at exact same level as Experience */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="flex items-center gap-3 text-xl font-bold text-slate-900 dark:text-white mb-2">
               <Award className="text-purple-600" />
               Certifications
             </h3>
-
-            <div className="grid gap-6">
-              {certifications.map((cert, idx) => (
+            <p className="text-xs uppercase tracking-widest text-slate-400 dark:text-slate-500 font-semibold mb-6">
+              Additional academic achievements
+            </p>
+            <div className="space-y-4">
+              {certifications.map((group, gIdx) => (
                 <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 30 }}
+                  key={gIdx}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className={cardBase}
+                  transition={{ duration: 0.5, delay: gIdx * 0.12 }}
+                  className="group relative rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-5 hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 overflow-hidden"
                 >
-                  <h4 className="font-bold text-purple-600 dark:text-purple-400 mb-4">
-                    {cert.org}
-                  </h4>
-
-                  <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2">
-                    {cert.items.map((item, i) => (
-                      <li key={i}>• {item}</li>
+                  <span className="absolute -bottom-2 -right-1 text-6xl font-black text-slate-100 dark:text-slate-700/50 select-none pointer-events-none leading-none group-hover:text-purple-100 dark:group-hover:text-purple-900/30 transition-colors duration-300">
+                    {group.institution.charAt(0)}
+                  </span>
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-2 h-2 rounded-full bg-purple-500 shrink-0" />
+                    <h4 className="font-bold text-slate-900 dark:text-white text-sm tracking-wide">
+                      {group.institution}
+                    </h4>
+                  </div>
+                  <div className="space-y-2 relative z-10">
+                    {group.certs.map((cert, cIdx) => (
+                      <div key={cIdx} className="flex items-start justify-between gap-3">
+                        <div className="flex-1">
+                          <p className="text-sm text-slate-700 dark:text-slate-300 leading-snug">{cert.name}</p>
+                          {cert.note && (
+                            <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5 italic">{cert.note}</p>
+                          )}
+                        </div>
+                        <span className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 whitespace-nowrap shrink-0">
+                          <Calendar size={9} />
+                          {cert.year}
+                        </span>
+                      </div>
                     ))}
-                  </ul>
-
-                  <div className="mt-4 h-[2px] w-0 group-hover:w-full bg-purple-500 transition-all duration-500" />
+                  </div>
                 </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
+
         </div>
       </div>
     </section>
