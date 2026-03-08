@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Palette, Code, Briefcase, GraduationCap, MapPin, Calendar, Award } from 'lucide-react';
@@ -17,19 +16,12 @@ export const About = () => {
 
   const experiences = [
     {
-      role: 'Lead UI/UX Engineer',
-      company: 'Prism Designs',
-      period: '2022 - Present',
-      description: 'Spearheading the evolution of our enterprise design system and bridge the gap between Figma and production code.',
-      tag: 'Current'
+      role: 'User Interface Engineering Intern',
+      company: 'ICIEOS',
+      period: 'Mar 2025 - Sep 2025',
+      tag: 'Current',
+      description: 'Designed UI flows across 5 projects including POS, Landlord, Mobile Apps & Caregiver Platform. Built a shared Design Library and collaborated with cross-functional teams via Git and client meetings.'
     },
-    {
-      role: 'Senior Product Designer',
-      company: 'Vortex Apps',
-      period: '2020 - 2022',
-      description: 'Transformed complex data workflows into intuitive dashboard interfaces for fintech clients.',
-      tag: null
-    }
   ];
 
   const certifications = [
@@ -147,7 +139,7 @@ export const About = () => {
           </motion.div>
         </div>
 
-        {/* Row 2: Experience + Education | Certifications — perfectly side by side */}
+        {/* Row 2: Experience + Education | Certifications */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
           {/* LEFT: Experience + Education */}
@@ -171,7 +163,7 @@ export const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.15 }}
-                    className="group relative rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-5 hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300"
+                    className="group relative rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-5 hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 overflow-hidden"
                   >
                     {exp.tag && (
                       <span className="absolute top-4 right-4 text-xs font-semibold px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400">
@@ -181,7 +173,7 @@ export const About = () => {
                     <span className="text-4xl font-black text-slate-100 dark:text-slate-700/60 absolute bottom-3 right-5 select-none pointer-events-none leading-none group-hover:text-purple-100 dark:group-hover:text-purple-900/30 transition-colors duration-300">
                       0{idx + 1}
                     </span>
-                    <h4 className="font-bold text-slate-900 dark:text-white text-base mb-1">{exp.role}</h4>
+                    <h4 className="font-bold text-slate-900 dark:text-white text-base mb-1 pr-16">{exp.role}</h4>
                     <div className="flex items-center gap-3 mb-3">
                       <span className="text-sm font-medium text-purple-600 dark:text-purple-400">{exp.company}</span>
                       <span className="text-slate-300 dark:text-slate-600">•</span>
@@ -196,6 +188,7 @@ export const About = () => {
               </div>
             </div>
 
+            {/* Education */}
             <div>
               <h3 className="flex items-center gap-3 text-xl font-bold text-slate-900 dark:text-white mb-6">
                 <GraduationCap className="text-purple-600" />
@@ -214,21 +207,21 @@ export const About = () => {
                 />
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-1">
-                    <h4 className="font-bold text-slate-900 dark:text-white">BFA in Interaction Design</h4>
+                    <h4 className="font-bold text-slate-900 dark:text-white">BSc Hons Information Technology</h4>
                     <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 ml-2 whitespace-nowrap">
-                      Class of 2018
+                      2023 - Present
                     </span>
                   </div>
                   <div className="flex items-center gap-1 text-sm text-purple-600 dark:text-purple-400 mt-1">
                     <MapPin size={12} />
-                    <span>Global Institute of Art & Tech</span>
+                    <span>BCI Campus Negombo</span>
                   </div>
                 </div>
               </motion.div>
             </div>
           </motion.div>
 
-          {/* RIGHT: Certifications — starts at exact same level as Experience */}
+          {/* RIGHT: Certifications */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
