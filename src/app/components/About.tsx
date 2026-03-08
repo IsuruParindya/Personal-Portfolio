@@ -235,13 +235,10 @@ export const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="flex items-center gap-3 text-xl font-bold text-slate-900 dark:text-white mb-2">
+            <h3 className="flex items-center gap-3 text-xl font-bold text-slate-900 dark:text-white mb-6">
               <Award className="text-purple-600" />
               Certifications
             </h3>
-            <p className="text-xs uppercase tracking-widest text-slate-400 dark:text-slate-500 font-semibold mb-6">
-              Additional academic achievements
-            </p>
             <div className="space-y-4">
               {certifications.map((group, gIdx) => (
                 <motion.div
