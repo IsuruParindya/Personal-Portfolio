@@ -4,9 +4,9 @@ import { Palette, Code, Briefcase, GraduationCap, MapPin, Calendar, Award } from
 
 export const About = () => {
   const skills = [
-    'User Research', 'Information Architecture', 'Visual Design',
+    'UX Writing', 'Research', 'IA (Information Architecture)',
     'Interaction Design', 'Prototyping', 'Usability Testing',
-    'Accessibility (A11y)', 'Design Systems'
+    'Visual Design', 'Design Systems', 'Analytics', 'Strategy'
   ];
 
   const tools = [
