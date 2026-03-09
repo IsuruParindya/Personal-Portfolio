@@ -1,14 +1,13 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'motion/react';
-import { Send, Linkedin, Twitter, Dribbble, Github, Mail, MapPin } from 'lucide-react';
+import { Send, Linkedin, Twitter, Github, Mail, MapPin } from 'lucide-react';
 import { toast } from 'sonner';
 
 export const Contact = () => {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm();
 
   const onSubmit = async (data: any) => {
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 2000));
     console.log('Submission:', data);
     toast.success("Message transmitted successfully!");
@@ -115,27 +114,19 @@ export const Contact = () => {
 
 export const Footer = () => {
   return (
-    <footer className="py-12 px-6 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-[#0a0a1f]">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-md bg-purple-600 flex items-center justify-center text-white font-black text-xl italic shadow-lg shadow-purple-500/20">P</div>
-          <span className="font-black text-slate-900 dark:text-white tracking-widest text-lg">Parindya</span>
+    <footer className="py-16 px-6 bg-white dark:bg-[#0a0a1f] border-t border-slate-100 dark:border-slate-800">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+
+        {/* Left - Name + Copyright on same line */}
+        <div className="text-base text-slate-500 dark:text-slate-400 text-center md:text-left flex items-center gap-2">
+          Parindya&nbsp;© {new Date().getFullYear()} Parindya. All rights reserved.
         </div>
-        
-        <div className="flex flex-col items-center md:items-start gap-1">
-          <p className="text-slate-500 text-xs font-bold uppercase tracking-widest">
-            © {new Date().getFullYear()} Isuru Parindya. All rights reserved.
-          </p>
-          <p className="text-slate-300 dark:text-slate-700 text-[10px] font-black uppercase tracking-[0.3em]">
-            Precision Engineering • Purposeful Design
-          </p>
-        </div>
-        
-        <div className="flex items-center gap-4">
+
+        {/* Right - Social */}
+        <div className="flex items-center gap-5">
           <SocialLink href="#" icon={<Linkedin className="w-5 h-5" />} />
-          <SocialLink href="#" icon={<Twitter className="w-5 h-5" />} />
-          <SocialLink href="#" icon={<Dribbble className="w-5 h-5" />} />
           <SocialLink href="#" icon={<Github className="w-5 h-5" />} />
+          <SocialLink href="#" icon={<Twitter className="w-5 h-5" />} />
         </div>
       </div>
     </footer>
@@ -143,8 +134,8 @@ export const Footer = () => {
 };
 
 const SocialLink = ({ href, icon }: { href: string; icon: React.ReactNode }) => (
-  <a 
-    href={href} 
+  <a
+    href={href}
     className="w-10 h-10 rounded-xl flex items-center justify-center text-slate-400 hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:text-purple-600 transition-all duration-300 border border-transparent hover:border-purple-100 dark:hover:border-purple-800"
   >
     {icon}

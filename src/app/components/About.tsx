@@ -11,7 +11,7 @@ export const About = () => {
 
   const tools = [
     'Figma', 'Adobe Creative Suite', 'React', 'TypeScript',
-    'Tailwind CSS', 'Framer Motion', 'Webflow', 'Storybook'
+    'Tailwind CSS', 'Wireframing & Mockups', 'Webflow', 'Storybook'
   ];
 
   const experiences = [
