@@ -35,7 +35,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">Email</p>
-                  <p className="text-lg font-bold text-slate-900 dark:text-white">hello@arivera.design</p>
+                  <p className="text-lg font-bold text-slate-900 dark:text-white">parindyapigera@gmail.com</p>
                 </div>
               </div>
 
@@ -45,7 +45,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">Location</p>
-                  <p className="text-lg font-bold text-slate-900 dark:text-white">San Francisco, CA</p>
+                  <p className="text-lg font-bold text-slate-900 dark:text-white">Colombo, Sri Lanka</p>
                 </div>
               </div>
             </div>
