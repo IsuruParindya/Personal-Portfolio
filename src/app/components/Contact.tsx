@@ -124,8 +124,8 @@ export const Footer = () => {
 
         {/* Right - Social */}
         <div className="flex items-center gap-5">
-          <SocialLink href="#" icon={<Linkedin className="w-5 h-5" />} />
-          <SocialLink href="#" icon={<Github className="w-5 h-5" />} />
+          <SocialLink href="https://www.linkedin.com/in/isuru-parindya-pigera-a62137338" icon={<Linkedin className="w-5 h-5" />} />
+          <SocialLink href="https://github.com/IsuruParindya" icon={<Github className="w-5 h-5" />} />
           <SocialLink href="#" icon={<Twitter className="w-5 h-5" />} />
         </div>
       </div>
