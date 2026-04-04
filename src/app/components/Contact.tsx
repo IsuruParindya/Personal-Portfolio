@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'motion/react';
-import { Send, Linkedin, Twitter, Github, Mail, MapPin } from 'lucide-react';
+import { Send, Linkedin, Github, Mail, MapPin, Dribbble } from 'lucide-react';
 import { toast } from 'sonner';
 
 export const Contact = () => {
@@ -126,7 +126,7 @@ export const Footer = () => {
         <div className="flex items-center gap-5">
           <SocialLink href="https://www.linkedin.com/in/isuru-parindya-pigera-a62137338" icon={<Linkedin className="w-5 h-5" />} />
           <SocialLink href="https://github.com/IsuruParindya" icon={<Github className="w-5 h-5" />} />
-          <SocialLink href="#" icon={<Twitter className="w-5 h-5" />} />
+          <SocialLink href="#" icon={<Dribbble className="w-5 h-5" />} />
         </div>
       </div>
     </footer>

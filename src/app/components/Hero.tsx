@@ -48,7 +48,7 @@ export const Hero = () => {
       </div>
       
       {/* Scroll indicator */}
-      <motion.div 
+      <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-400"
