@@ -19,10 +19,10 @@ export const Hero = () => {
             UI/UX Architecht
           </span>
           <h1 className="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
-            Crafting Digital Experiences with <span className="text-purple-600 dark:text-purple-400">Precision</span> & <span className="text-purple-600 dark:text-purple-400">Purpose</span>
+            Built on Logic. Driven by <span className="text-purple-600 dark:text-purple-400">Intent</span> & <span className="text-purple-600 dark:text-purple-400">Purpose</span>
           </h1>
           <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto">
-            Bridging the gap between design and engineering to build human-centered interfaces that perform beautifully.
+            No guesswork,just clear decisions, structured systems, and efficient designs that deliver real results. Let's create something impactful together.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
