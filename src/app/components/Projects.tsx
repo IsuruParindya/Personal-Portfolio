@@ -26,10 +26,10 @@ const projects = [
     }
   },
   {
-    title: "Lumina Mobile App",
+    title: "Indoor Plant Care App",
     description:
-      "Mindfulness and meditation app focused on minimalist UI and soothing user transitions.",
-    tech: ["React Native", "Motion", "Node.js"],
+      "Developed a mobile app for indoor plant care with plant details, care schedules, and offline data storage using SQLite.",
+    tech: ["Flutter", "Dart", "SQLite"],
     image:
       "https://images.unsplash.com/photo-1636247497842-81ee9c80f9df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     link: "#",
@@ -46,16 +46,16 @@ const projects = [
     }
   },
   {
-    title: "Nexus Design System",
+    title: "Vehicle Service Platform",
     description:
-      "An enterprise-level design system with 50+ accessible components and full documentation.",
-    tech: ["Storybook", "Figma", "TypeScript"],
+      "Collaborated on developing a Car Service Center Management System web app to manage inventory, billing, and service records.",
+    tech: ["Html", "Bootstrap", "MySQL", "PHP", "JavaScript"],
     image:
       "https://images.unsplash.com/photo-1727522974621-c64b5ea90c0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     link: "#",
     github: "#",
-    category: "Design System",
-    tags: ["Design System", "Components", "UI"],
+    category: "Web App",
+    tags: ["Web App", "Services", "Integration"],
     details: {
       overview: "Nexus is a cohesive design system to streamline enterprise-level UI development.",
       problem: "Development teams were inconsistent in UI patterns, slowing down product delivery.",
