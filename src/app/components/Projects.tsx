@@ -6,10 +6,10 @@ import { CaseStudyModal } from "./CaseStudyModal";
 
 const projects = [
   {
-    title: "Echo Finance Dashboard",
+    title: "Pet Shop Management System",
     description:
-      "A comprehensive fintech dashboard for tracking crypto assets and fiat spending with real-time updates.",
-    tech: ["React", "Recharts", "Tailwind", "Next.js"],
+      "Collaborated on developing a pet shop management system in C# for handling inventory, customer records, and sales, ensuring efficient shop operations.",
+    tech: ["C#", ".NET", "SQL Server"],
     image:
       "https://images.unsplash.com/photo-1759297044036-19a0256fade2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     link: "#",
