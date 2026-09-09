@@ -75,7 +75,7 @@ export const About = () => {
 
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl group bg-[#0a0a0a]">
               <ImageWithFallback
-                src="/Isuru.png"
+                src="/Pigera2.jpeg"
                 alt="Isuru Parindya"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
