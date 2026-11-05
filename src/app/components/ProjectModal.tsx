@@ -43,7 +43,7 @@ export const ProjectModal: React.FC<CaseStudyModalProps> = ({ project, isOpen, o
         {/* Header */}
         <div className="sticky top-0 z-10 flex items-center justify-between p-6 border-b border-slate-100 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white">{project.title}</h2>
-          <button 
+          <button
             onClick={onClose}
             className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
           >

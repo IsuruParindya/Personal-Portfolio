@@ -3,23 +3,42 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Palette, Code, Briefcase, GraduationCap, MapPin, Calendar, Award } from 'lucide-react';
 
 export const About = () => {
-  const skills = [
-    'UX Writing', 'Research', 'IA (Information Architecture)',
-    'Interaction Design', 'Prototyping', 'Usability Testing',
-    'Visual Design', 'Design Systems', 'Analytics', 'Strategy'
-  ];
-
-  const tools = [
-    'Figma', 'Adobe Creative Suite', 'React', 'TypeScript',
-    'Tailwind CSS', 'Wireframing & Mockups', 'Webflow', 'Storybook'
-  ];
+  const skillCategories = [
+  {
+    title: 'Frontend',
+    skills: ['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS'],
+  },
+  {
+    title: 'Backend & APIs',
+    skills: ['Node.js', 'Express.js', 'Flask', 'REST APIs'],
+  },
+  {
+    title: 'AI & Machine Learning',
+    skills: [
+      'Python', 'PyTorch', 'YOLOv8', 'ResNet50', 'OpenCV', 'AI Agents',
+    ],
+  },
+  {
+    title: 'UI/UX & Mobile Development',
+    skills: [
+      'Figma', 'Wireframing', 'Prototyping', 'Design Systems',
+      'Flutter', 'Dart', 'Material Design 3',
+    ],
+  },
+  {
+    title: 'Databases & Tools',
+    skills: [
+      'MySQL', 'SQLite', 'Git', 'GitHub', 'VS Code', 'Jira',
+    ],
+  },
+];
 
   const experiences = [
     {
       role: 'User Interface Engineering Intern',
       company: 'ICIEOS',
       period: 'Mar 2025 - Sep 2025',
-      tag: 'Current',
+      tag: 'Completed',
       description: 'Designed UI flows across 5 projects including POS, Landlord, Mobile Apps & Caregiver Platform. Built a shared Design Library and collaborated with cross-functional teams via Git and client meetings.'
     },
   ];
@@ -34,25 +53,27 @@ export const About = () => {
       ]
     },
     {
-      institution: 'Udemy',
-      certs: [
-        { name: 'UI/UX Design Course', year: '2025', note: 'Completed during UI/UX Engineer Internship' },
-      ]
-    },
-    {
       institution: 'BCI Campus',
       certs: [
         { name: 'Certificate in Java Programming', year: '2023', note: null },
       ]
-    }
+    },
+    {
+      institution: 'BCI International Research Conference (BCIRC)',
+      certs: [
+        { name: 'Real-Time Biodiversity Monitoring via Edge-Based Lightweight Bird Species Recognition Using Optimized YOLOv8',
+          year: '2026',
+          note: 'Research Paper Accepted for Publication at BCIRC 2026' },
+      ]
+    },
   ];
 
   return (
     <section id="about" className="py-24 px-6 bg-slate-50 dark:bg-slate-900/50">
       <div className="max-w-6xl mx-auto">
 
-        {/* Row 1: Name + hero photo | Skills + Tools + Quote */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
+        {/* Row 1: Name + hero photo | Skills + Quote */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-8">
 
           {/* LEFT: Name + Photo */}
           <motion.div
@@ -69,7 +90,7 @@ export const About = () => {
                 ISURU PARINDYA
               </h2>
               <p className="text-purple-600 dark:text-purple-400 font-bold uppercase tracking-widest">
-                Creative Problem Solver & Visual Architect
+                Software Engineer & Creative Problem Solver
               </p>
             </div>
 
@@ -83,7 +104,7 @@ export const About = () => {
             </div>
           </motion.div>
 
-          {/* RIGHT: Skills + Tools + Quote */}
+          {/* RIGHT: Skills + Quote */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -96,45 +117,26 @@ export const About = () => {
                 <Palette className="text-purple-600" />
                 Expertise & Skills
               </h3>
-              <div className="flex flex-wrap gap-3">
-                {skills.map((skill, idx) => (
-                  <span
-                    key={idx}
-                    className="px-4 py-2 rounded-2xl bg-transparent text-slate-700 dark:text-slate-300 font-medium text-sm border border-slate-400 dark:border-slate-600 hover:border-purple-500 hover:text-purple-600 dark:hover:border-purple-400 dark:hover:text-purple-400 cursor-default transition-transform hover:-translate-y-1"
-                  >
-                    {skill}
-                  </span>
+              <div className="space-y-6">
+                {skillCategories.map((category) => (
+                  <div key={category.title}>
+                    <h4 className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white mb-3">
+                      <Code size={16} className="text-purple-600" />
+                      {category.title}
+                    </h4>
+                    <div className="flex flex-wrap gap-3">
+                      {category.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="px-4 py-2 rounded-2xl bg-transparent text-slate-700 dark:text-slate-300 font-medium text-sm border border-slate-400 dark:border-slate-600 hover:border-purple-500 hover:text-purple-600 dark:hover:border-purple-400 dark:hover:text-purple-400 cursor-default transition-transform hover:-translate-y-1"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
-            </div>
-
-            <div>
-              <h3 className="flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white mb-8">
-                <Code className="text-purple-600" />
-                Technologies & Tools
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {tools.map((tool, idx) => (
-                  <span
-                    key={idx}
-                    className="px-4 py-2 rounded-2xl bg-transparent text-slate-700 dark:text-slate-300 font-medium text-sm border border-slate-400 dark:border-slate-600 hover:border-purple-500 hover:text-purple-600 dark:hover:border-purple-400 dark:hover:text-purple-400 cursor-default transition-transform hover:-translate-y-1"
-                  >
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="p-8 rounded-[2.5rem] bg-transparent border border-slate-400 dark:border-slate-600 text-slate-700 dark:text-slate-300 shadow-2xl relative overflow-hidden">
-              <div className="relative z-10">
-                <h3 className="text-2xl font-bold mb-4 italic">
-                  &ldquo;Design is not just what it looks like. Design is how it works.&rdquo;
-                </h3>
-                <p className="font-light leading-relaxed">
-                  I believe in purposeful aesthetics. Every element I place has a reason to exist, ensuring that form always follows function while still evoking delight.
-                </p>
-              </div>
-              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl" />
             </div>
           </motion.div>
         </div>
@@ -207,15 +209,18 @@ export const About = () => {
                 />
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-1">
-                    <h4 className="font-bold text-slate-900 dark:text-white">BSc Hons Information Technology</h4>
-                    <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 ml-2 whitespace-nowrap">
-                      2023 - Present
+                    <h4 className="font-bold text-slate-900 dark:text-white">BSc (Hons) Information Technology</h4>
+                    <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 ml-2 whitespace-nowrap">
+                      Graduated
                     </span>
                   </div>
                   <div className="flex items-center gap-1 text-sm text-purple-600 dark:text-purple-400 mt-1">
                     <MapPin size={12} />
                     <span>BCI Campus Negombo</span>
                   </div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">
+                    2022 - 2026 | GPA: 3.14
+                  </p>
                 </div>
               </motion.div>
             </div>

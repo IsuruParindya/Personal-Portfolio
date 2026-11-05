@@ -1,33 +1,33 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Search, Lightbulb, PenTool, FlaskConical, Rocket } from 'lucide-react';
+import { ClipboardList, PencilRuler, Code2, FlaskConical, Rocket } from 'lucide-react';
 
 export const UXProcess = () => {
   const steps = [
     {
-      title: 'Research',
-      icon: <Search className="w-6 h-6" />,
-      description: 'Understanding users and defining the core problem space.'
+      title: 'Planning',
+      icon: <ClipboardList className="w-6 h-6" />,
+      description: 'Defining requirements, goals, scope, and a clear implementation plan.'
     },
     {
-      title: 'Ideation',
-      icon: <Lightbulb className="w-6 h-6" />,
-      description: 'Brainstorming solutions and crafting low-fidelity wireframes.'
+      title: 'Design',
+      icon: <PencilRuler className="w-6 h-6" />,
+      description: 'Designing the system architecture, interfaces, and technical solutions.'
     },
     {
-      title: 'Prototyping',
-      icon: <PenTool className="w-6 h-6" />,
-      description: 'Building interactive high-fidelity models for validation.'
+      title: 'Development',
+      icon: <Code2 className="w-6 h-6" />,
+      description: 'Building maintainable, scalable software using modern development practices.'
     },
     {
       title: 'Testing',
       icon: <FlaskConical className="w-6 h-6" />,
-      description: 'Refining through usability tests and iterative feedback.'
+      description: 'Validating functionality, fixing defects, and improving quality and performance.'
     },
     {
-      title: 'Delivery',
+      title: 'Deployment',
       icon: <Rocket className="w-6 h-6" />,
-      description: 'Implementing production-ready code with pixel precision.'
+      description: 'Releasing reliable software and maintaining it through monitoring and improvements.'
     }
   ];
 
@@ -35,10 +35,10 @@ export const UXProcess = () => {
     <section className="py-24 px-6 bg-slate-50 dark:bg-slate-900/50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6">My UX Methodology</h2>
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6">My Development Process</h2>
           <div className="h-1.5 w-16 bg-purple-600 mx-auto rounded-full mb-8" />
           <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            A systematic, data-driven approach to solving complex problems and creating memorable user journeys.
+            A structured approach to planning, building, testing, and delivering reliable software solutions.
           </p>
         </div>
 

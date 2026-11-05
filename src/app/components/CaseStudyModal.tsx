@@ -86,7 +86,6 @@ export const CaseStudyModal = ({ isOpen, onClose, project }: CaseStudyModalProps
                 <div className="lg:col-span-8 space-y-16 text-gray-900 dark:text-gray-100">
                   <section>
                     <h3 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                      <span className="h-1.5 w-8 bg-purple-600 dark:bg-purple-400 rounded-full" />
                       Project Overview
                     </h3>
                     <p className="text-lg leading-relaxed">
@@ -96,7 +95,6 @@ export const CaseStudyModal = ({ isOpen, onClose, project }: CaseStudyModalProps
 
                   <section>
                     <h3 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                      <span className="h-1.5 w-8 bg-purple-600 dark:bg-purple-400 rounded-full" />
                       Problem Statement
                     </h3>
                     <p className="text-lg leading-relaxed">
@@ -106,7 +104,6 @@ export const CaseStudyModal = ({ isOpen, onClose, project }: CaseStudyModalProps
 
                   <section>
                     <h3 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                      <span className="h-1.5 w-8 bg-purple-600 dark:bg-purple-400 rounded-full" />
                       Research & Insights
                     </h3>
                     <p className="text-lg leading-relaxed">
@@ -116,7 +113,6 @@ export const CaseStudyModal = ({ isOpen, onClose, project }: CaseStudyModalProps
 
                   <section>
                     <h3 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                      <span className="h-1.5 w-8 bg-purple-600 dark:bg-purple-400 rounded-full" />
                       Design Process
                     </h3>
                     <p className="text-lg leading-relaxed">
@@ -132,7 +128,6 @@ export const CaseStudyModal = ({ isOpen, onClose, project }: CaseStudyModalProps
                     <ul className="space-y-4 text-gray-800 dark:text-gray-200">
                       {(project.details.results || "Lorem ipsum dolor sit amet. Consectetur adipiscing elit. Sed do eiusmod tempor.").split(". ").map((result, i) => (
                         <li key={i} className="flex gap-3 text-sm">
-                          <CheckCircle2 size={18} className="text-purple-600 dark:text-purple-400 shrink-0" />
                           <span>{result}</span>
                         </li>
                       ))}
