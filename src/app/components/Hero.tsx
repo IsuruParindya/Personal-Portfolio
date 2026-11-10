@@ -16,7 +16,7 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <span className="px-4 py-1.5 rounded-full bg-purple-100 dark:bg-purple-900/20 border border-purple-300 dark:border-purple-700 text-purple-700 dark:text-purple-300 text-sm font-medium mb-6 inline-block">
-            UI/UX Architecht
+            AI & Software Engineer
           </span>
           <h1 className="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
             Built on Logic. Driven by <span className="text-purple-600 dark:text-purple-400">Intent</span> & <span className="text-purple-600 dark:text-purple-400">Purpose</span>

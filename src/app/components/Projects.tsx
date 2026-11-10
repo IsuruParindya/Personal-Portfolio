@@ -11,9 +11,9 @@ const projects = [
       "Built a YOLOv8 and ResNet50-based bird recognition system with Sinhala and English support.",
     tech: ["Python", "YOLOv8", "ResNet50", "OpenCV", "Flask", "React", "SQLite"],
     image:
-      "https://images.unsplash.com/photo-1759297044036-19a0256fade2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "/Project-images/birdrecognition.jpeg",
     link: "#",
-    github: "#",
+    github: "https://github.com/IsuruParindya/BirdVision-Dashboard",
     category: ["AI / Machine Learning (Final Year Project)"],
     tags: ["Deep Learning", "Computer Vision", "React", "Flask"],
     details: {
@@ -38,9 +38,9 @@ const projects = [
     "Developed a Flutter-based plant management app with offline support, using SharedPreferences for local storage of plant and user data.",
   tech: ["Flutter", "Dart", "SharedPreferences", "Material Design"],
   image:
-    "https://images.unsplash.com/photo-1636247497842-81ee9c80f9df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    "Project-images/plantcare.png",
   link: "#",
-  github: "#",
+  github: "https://github.com/IsuruParindya/plant_care",
   category: ["Mobile App"],
   tags: ["Mobile", "Flutter", "Offline-First"],
   details: {
@@ -65,9 +65,9 @@ const projects = [
     "Built a Flutter based mobile app for aquarium monitoring, device control, and fish feeding management.",
   tech: ["Flutter", "Dart", "SQLite", "FL Chart", "Google Fonts", "IoT/Sensor Integration"],
   image:
-    "https://images.unsplash.com/photo-1636247497842-81ee9c80f9df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    "Project-images/aquasense.jpeg",
   link: "#",
-  github: "#",
+  github: "https://github.com/IsuruParindya/aqua_sense",
   category: "Mobile App (Group Project)",
   tags: ["Mobile", "Flutter", "IoT"],
   details: {
@@ -92,9 +92,9 @@ const projects = [
     "Built a full-stack RFID system for tracking assets, monitoring movements, and preventing unauthorized exits.",
   tech: ["React", "Vite", "Node.js", "Express.js", "PostgreSQL", "JWT", "Axios", "RFID", "REST API"],
   image:
-    "https://images.unsplash.com/photo-1636247497842-81ee9c80f9df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    "Project-images/assettrackpro.png",
   link: "#",
-  github: "#",
+  github: "https://github.com/kawdoco/AssetTrackPro",
   category: ["Full-Stack (Group Project)"],
   tags: ["React", "Node.js", "RFID", "Dashboard"],
   details: {
@@ -119,9 +119,9 @@ const projects = [
     "Built an AI-powered Windows assistant for natural language tasks and automation.",
   tech: ["Python", "Gemini/Nemotron", "Hermes Agent Framework", "AI Agents", "Tool Calling", "Windows Automation", "Local File System"],
   image:
-    "https://images.unsplash.com/photo-1636247497842-81ee9c80f9df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    "Project-images/loona.png",
   link: "#",
-  github: "#",
+  github: "https://github.com/IsuruParindya/AI-Desktop-Companion",
   category: "AI / Automation",
   tags: ["AI Agents", "Python", "Automation", "Desktop"],
   details: {
@@ -137,6 +137,32 @@ const projects = [
       "An agent that plans and executes tasks, verifies the outcome, and reports back, with persistent user profile support and safety rules that limit what it can do on the PC.",
     results:
       "Delivered a working desktop agent that completes natural-language tasks end to end, with verification and safety checks built into every run."
+    }
+  },
+
+{
+  title: "UI/UX Enginner's Portfolio Website",
+  description:
+    "A modern, responsive portfolio website built using React, Tailwind CSS, Lucide React, and TypeScript. Designed with a clean interface, intuitive navigation, and visually appealing layouts to showcase UI engineering projects and technical skills.",
+  tech: ["React", "Tailwind CSS", "Lucide React", "TypeScript"],
+  image: "Project-images/portfolio.png",
+  link: "#",
+  github: "https://github.com/IsuruParindya/My-Portfolio",
+  category: "UI Engineering",
+  tags: ["UI Engineering", "React", "Frontend", "TypeScript"],
+  details: {
+    overview:
+      "A portfolio website showcasing a UI Engineer's projects, technical skills, and professional experience.",
+    problem:
+      "Presenting UI engineering projects and technical expertise through a structured and accessible online portfolio.",
+    research:
+      "Explored modern frontend development practices, responsive layouts, and component-based UI design.",
+    process:
+      "Built using React and TypeScript, styled with Tailwind CSS, and enhanced with Lucide React icons.",
+    solution:
+      "A modern, responsive portfolio website with dedicated sections for projects, skills, and professional information.",
+    results:
+      "Delivered a clean and responsive portfolio experience for showcasing UI engineering work."
     }
   }
 ];
@@ -202,6 +228,8 @@ export const Projects = () => {
                   </a>
                   <a
                     href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-4 bg-white text-slate-900 rounded-full hover:bg-purple-600 hover:text-white transition-colors flex items-center justify-center"
                   >
                     <Github className="w-6 h-6" />
