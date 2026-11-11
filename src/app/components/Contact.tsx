@@ -1,17 +1,45 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'motion/react';
 import { Send, Linkedin, Github, Mail, MapPin, Dribbble } from 'lucide-react';
-import { toast } from 'sonner';
 
 export const Contact = () => {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm();
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const resetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (resetTimerRef.current) clearTimeout(resetTimerRef.current);
+    };
+  }, []);
 
   const onSubmit = async (data: any) => {
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    console.log('Submission:', data);
-    toast.success("Message transmitted successfully!");
-    reset();
+    try {
+      const response = await fetch('https://formspree.io/f/xyewgpny', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      reset();
+      setStatus('success');
+
+      if (resetTimerRef.current) clearTimeout(resetTimerRef.current);
+      resetTimerRef.current = setTimeout(() => {
+        setStatus('idle');
+      }, 4000);
+    } catch (error) {
+      console.error('Email submission error:', error);
+      setStatus('error');
+    }
   };
 
   return (
@@ -99,10 +127,16 @@ export const Contact = () => {
               <button
                 disabled={isSubmitting}
                 type="submit"
-                className="w-full py-5 bg-purple-600 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-500 text-white rounded-2xl font-black uppercase tracking-widest text-sm flex items-center justify-center gap-3 transition-all disabled:opacity-50 shadow-xl shadow-purple-500/20"
+                className={`w-full py-5 ${status === 'success' ? 'bg-green-600 hover:bg-green-700 dark:bg-green-600 dark:hover:bg-green-500' : 'bg-purple-600 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-500'} text-white rounded-2xl font-black uppercase tracking-widest text-sm flex items-center justify-center gap-3 transition-all disabled:opacity-50 shadow-xl shadow-purple-500/20`}
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-                <Send className="w-5 h-5" />
+                {isSubmitting
+                  ? 'Sending...'
+                  : status === 'success'
+                  ? 'Message sent successfully!'
+                  : status === 'error'
+                  ? 'Unable to send your message. Please try again.'
+                  : 'Send Message'}
+                {!isSubmitting && status !== 'success' && <Send className="w-5 h-5" />}
               </button>
             </form>
           </motion.div>
