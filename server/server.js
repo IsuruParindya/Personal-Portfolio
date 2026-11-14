@@ -2,17 +2,20 @@
 require('dotenv').config();
 
 const express = require('express');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
 
 const app = express();
+app.set('trust proxy', 1);
 const PORT = process.env.PORT || 5000;
 
 // Check environment variables
-if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-  throw new Error('Missing Gmail SMTP environment variables.');
+if (!process.env.RESEND_API_KEY || !process.env.EMAIL_USER) {
+  throw new Error('Missing email environment variables.');
 }
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Middleware
 app.use(cors({
@@ -30,24 +33,6 @@ const contactLimiter = rateLimit({
     success: false,
     message: 'Too many requests. Please try again later.',
   },
-});
-
-// Gmail SMTP configuration
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
-
-// Verify Gmail connection
-transporter.verify((error) => {
-  if (error) {
-    console.error('Gmail SMTP connection failed:', error.message);
-  } else {
-    console.log('Gmail SMTP connection established.');
-  }
 });
 
 // HTML escaping
@@ -136,7 +121,18 @@ ${message.trim()}
       `,
     };
 
-    await transporter.sendMail(mailOptions);
+    const { error } = await resend.emails.send({
+      from: 'Portfolio Contact <onboarding@resend.dev>',
+      to: process.env.EMAIL_USER,
+      replyTo: email.trim(),
+      subject: mailOptions.subject,
+      text: mailOptions.text,
+      html: mailOptions.html,
+    });
+
+    if (error) {
+      throw new Error(error.message);
+    }
 
     return res.status(200).json({
       success: true,
