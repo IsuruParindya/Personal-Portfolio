@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 import { motion } from 'motion/react';
 import { Send, Linkedin, Github, Mail, MapPin, Dribbble } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:5001';
+
 interface ContactFormData {
   name: string;
   email: string;
@@ -30,7 +32,7 @@ export const Contact = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      const response = await fetch('http://localhost:5001/api/contact', {
+      const response = await fetch(`${API_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
