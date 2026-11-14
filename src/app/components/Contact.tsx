@@ -204,7 +204,7 @@ export const Contact = () => {
                   : status === 'success'
                   ? 'Message sent successfully!'
                   : status === 'error'
-                  ? 'Unable to send your message. Please try again.'
+                  ? 'Message send failed. Try again.'
                   : 'Send Message'}
 
                 {!isSubmitting && status !== 'success' && (
